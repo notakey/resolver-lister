@@ -19,25 +19,35 @@
 
 @implementation ResolverLister
 
-- (NSArray<ResolverInfo*>*)listIPv4ResolversAsIpStrings
+- (NSArray<ResolverInfo*>*)generateResolverArray
 {
-    res_state res;
-    res_ninit(&_res);
+    res_state res = malloc(sizeof(struct __res_state));
+    
+    if ( res_ninit(res) != 0 ) {
+        return nil;
+    }
 
     NSMutableArray *result = [NSMutableArray new];
     
+    
     for (int i = 0; i < res->nscount; i++) {
-        sa_family_t family = res->nsaddr_list[i].sin_family;
-        
-        if (family != AF_INET) {
-            continue;
-        }
-        
         ResolverInfo* resultItem = [ResolverInfo new];
         
-        char str[INET_ADDRSTRLEN]; // String representation of address
-        inet_ntop(AF_INET, & (res->nsaddr_list[i].sin_addr.s_addr), str, INET_ADDRSTRLEN);
-        resultItem.ipRepresentation = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
+        sa_family_t family = res->nsaddr_list[i].sin_family;
+        if (family == AF_INET) {
+            resultItem.type = IpType_IPV4;
+            
+            char str[INET_ADDRSTRLEN];
+            inet_ntop(AF_INET, & (res->nsaddr_list[i].sin_addr.s_addr), str, INET_ADDRSTRLEN);
+            resultItem.ipRepresentation = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
+        } else if (family == AF_INET6) {
+            resultItem.type = IpType_IPV6;
+            
+            char str[INET6_ADDRSTRLEN];
+            inet_ntop(AF_INET6, & (res->nsaddr_list[i].sin_addr.s_addr), str, INET6_ADDRSTRLEN);
+            resultItem.ipRepresentation = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
+        }
+        
         resultItem.port = ntohs(res->nsaddr_list[i].sin_port);
         
         [result addObject:resultItem];
@@ -47,32 +57,5 @@
     return result;
 }
 
-- (NSArray<ResolverInfo*>*)listIPv6ResolversAsIpStrings
-{
-    res_state res;
-    res_ninit(&_res);
-    
-    NSMutableArray *result = [NSMutableArray new];
-    
-    for (int i = 0; i < res->nscount; i++) {
-        sa_family_t family = res->nsaddr_list[i].sin_family;
-        
-        if (family != AF_INET6) {
-            continue;
-        }
-        
-        ResolverInfo* resultItem = [ResolverInfo new];
-        
-        char str[INET6_ADDRSTRLEN]; // String representation of address
-        inet_ntop(AF_INET6, & (res->nsaddr_list[i].sin_addr.s_addr), str, INET6_ADDRSTRLEN);
-        resultItem.ipRepresentation = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
-        resultItem.port = ntohs(res->nsaddr_list[i].sin_port);
-        
-        [result addObject:resultItem];
-    }
-    res_ndestroy(res);
-    
-    return result;
-}
 
 @end
