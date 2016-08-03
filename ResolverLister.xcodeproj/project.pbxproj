@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		163BF6F01D51D92500ABB1F6 /* ResolverLister.h in Headers */ = {isa = PBXBuildFile; fileRef = 163BF6EF1D51D92500ABB1F6 /* ResolverLister.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		163BF6F81D51D9C100ABB1F6 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 163BF6F71D51D9C100ABB1F6 /* libresolv.tbd */; };
+		163BF6FB1D51D9F000ABB1F6 /* ResolverLister.m in Sources */ = {isa = PBXBuildFile; fileRef = 163BF6FA1D51D9F000ABB1F6 /* ResolverLister.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		163BF6EC1D51D92500ABB1F6 /* ResolverLister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResolverLister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		163BF6EF1D51D92500ABB1F6 /* ResolverLister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolverLister.h; sourceTree = "<group>"; };
 		163BF6F11D51D92500ABB1F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		163BF6F71D51D9C100ABB1F6 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		163BF6FA1D51D9F000ABB1F6 /* ResolverLister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResolverLister.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +25,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				163BF6F81D51D9C100ABB1F6 /* libresolv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30,6 +35,7 @@
 		163BF6E21D51D92500ABB1F6 = {
 			isa = PBXGroup;
 			children = (
+				163BF6F91D51D9D100ABB1F6 /* Dependencies */,
 				163BF6EE1D51D92500ABB1F6 /* ResolverLister */,
 				163BF6ED1D51D92500ABB1F6 /* Products */,
 			);
@@ -48,8 +54,17 @@
 			children = (
 				163BF6EF1D51D92500ABB1F6 /* ResolverLister.h */,
 				163BF6F11D51D92500ABB1F6 /* Info.plist */,
+				163BF6FA1D51D9F000ABB1F6 /* ResolverLister.m */,
 			);
 			path = ResolverLister;
+			sourceTree = "<group>";
+		};
+		163BF6F91D51D9D100ABB1F6 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				163BF6F71D51D9C100ABB1F6 /* libresolv.tbd */,
+			);
+			name = Dependencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				163BF6FB1D51D9F000ABB1F6 /* ResolverLister.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
