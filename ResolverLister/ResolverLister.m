@@ -15,6 +15,11 @@
 #import <arpa/inet.h>
 
 @implementation ResolverInfo
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@:%d (%@)", self.ipRepresentation, self.port, self.type == IpType_IPV4 ? @"IPv4" : @"IPv6"];
+}
+
 @end
 
 @implementation ResolverLister
@@ -27,28 +32,32 @@
         return nil;
     }
 
-    NSMutableArray *result = [NSMutableArray new];
+    union res_9_sockaddr_union *addr_union = malloc(res->nscount * sizeof(union res_9_sockaddr_union));
+    res_getservers(res, addr_union, res->nscount);
     
+    NSMutableArray *result = [NSMutableArray new];
     
     for (int i = 0; i < res->nscount; i++) {
         ResolverInfo* resultItem = [ResolverInfo new];
         
-        sa_family_t family = res->nsaddr_list[i].sin_family;
+        sa_family_t family = addr_union[i].sin.sin_family;
         if (family == AF_INET) {
             resultItem.type = IpType_IPV4;
+            resultItem.port = ntohs(addr_union[i].sin.sin_port);
             
             char str[INET_ADDRSTRLEN];
-            inet_ntop(AF_INET, & (res->nsaddr_list[i].sin_addr.s_addr), str, INET_ADDRSTRLEN);
+            inet_ntop(AF_INET, & (addr_union[i].sin.sin_addr.s_addr), str, INET_ADDRSTRLEN);
             resultItem.ipRepresentation = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
         } else if (family == AF_INET6) {
             resultItem.type = IpType_IPV6;
+            resultItem.port = ntohs(addr_union[i].sin6.sin6_port);
             
             char str[INET6_ADDRSTRLEN];
-            inet_ntop(AF_INET6, & (res->nsaddr_list[i].sin_addr.s_addr), str, INET6_ADDRSTRLEN);
+            inet_ntop(AF_INET6, & (addr_union[i].sin6.sin6_addr), str, INET6_ADDRSTRLEN);
             resultItem.ipRepresentation = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
         }
         
-        resultItem.port = ntohs(res->nsaddr_list[i].sin_port);
+        
         
         [result addObject:resultItem];
     }
