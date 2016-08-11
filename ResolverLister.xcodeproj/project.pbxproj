@@ -10,6 +10,13 @@
 		163BF6F01D51D92500ABB1F6 /* ResolverLister.h in Headers */ = {isa = PBXBuildFile; fileRef = 163BF6EF1D51D92500ABB1F6 /* ResolverLister.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		163BF6F81D51D9C100ABB1F6 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 163BF6F71D51D9C100ABB1F6 /* libresolv.tbd */; };
 		163BF6FB1D51D9F000ABB1F6 /* ResolverLister.m in Sources */ = {isa = PBXBuildFile; fileRef = 163BF6FA1D51D9F000ABB1F6 /* ResolverLister.m */; };
+		163D85C31D5C6BF800F7F7A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D85C21D5C6BF800F7F7A8 /* AppDelegate.swift */; };
+		163D85C51D5C6BF800F7F7A8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D85C41D5C6BF800F7F7A8 /* MasterViewController.swift */; };
+		163D85C71D5C6BF800F7F7A8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D85C61D5C6BF800F7F7A8 /* DetailViewController.swift */; };
+		163D85CA1D5C6BF800F7F7A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 163D85C81D5C6BF800F7F7A8 /* Main.storyboard */; };
+		163D85CC1D5C6BF800F7F7A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163D85CB1D5C6BF800F7F7A8 /* Assets.xcassets */; };
+		163D85CF1D5C6BF800F7F7A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 163D85CD1D5C6BF800F7F7A8 /* LaunchScreen.storyboard */; };
+		163D85D41D5C6DB400F7F7A8 /* ResolverLister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 163BF6EC1D51D92500ABB1F6 /* ResolverLister.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +25,14 @@
 		163BF6F11D51D92500ABB1F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163BF6F71D51D9C100ABB1F6 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		163BF6FA1D51D9F000ABB1F6 /* ResolverLister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResolverLister.m; sourceTree = "<group>"; };
+		163D85C01D5C6BF700F7F7A8 /* ResolverListerTest-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ResolverListerTest-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		163D85C21D5C6BF800F7F7A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		163D85C41D5C6BF800F7F7A8 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		163D85C61D5C6BF800F7F7A8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		163D85C91D5C6BF800F7F7A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		163D85CB1D5C6BF800F7F7A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		163D85CE1D5C6BF800F7F7A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		163D85D01D5C6BF800F7F7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +44,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		163D85BD1D5C6BF700F7F7A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				163D85D41D5C6DB400F7F7A8 /* ResolverLister.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +60,7 @@
 			children = (
 				163BF6F91D51D9D100ABB1F6 /* Dependencies */,
 				163BF6EE1D51D92500ABB1F6 /* ResolverLister */,
+				163D85C11D5C6BF800F7F7A8 /* ResolverListerTest-iOS */,
 				163BF6ED1D51D92500ABB1F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				163BF6EC1D51D92500ABB1F6 /* ResolverLister.framework */,
+				163D85C01D5C6BF700F7F7A8 /* ResolverListerTest-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +90,20 @@
 				163BF6F71D51D9C100ABB1F6 /* libresolv.tbd */,
 			);
 			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		163D85C11D5C6BF800F7F7A8 /* ResolverListerTest-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				163D85C21D5C6BF800F7F7A8 /* AppDelegate.swift */,
+				163D85C41D5C6BF800F7F7A8 /* MasterViewController.swift */,
+				163D85C61D5C6BF800F7F7A8 /* DetailViewController.swift */,
+				163D85C81D5C6BF800F7F7A8 /* Main.storyboard */,
+				163D85CB1D5C6BF800F7F7A8 /* Assets.xcassets */,
+				163D85CD1D5C6BF800F7F7A8 /* LaunchScreen.storyboard */,
+				163D85D01D5C6BF800F7F7A8 /* Info.plist */,
+			);
+			path = "ResolverListerTest-iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,16 +138,37 @@
 			productReference = 163BF6EC1D51D92500ABB1F6 /* ResolverLister.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		163D85BF1D5C6BF700F7F7A8 /* ResolverListerTest-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 163D85D31D5C6BF800F7F7A8 /* Build configuration list for PBXNativeTarget "ResolverListerTest-iOS" */;
+			buildPhases = (
+				163D85BC1D5C6BF700F7F7A8 /* Sources */,
+				163D85BD1D5C6BF700F7F7A8 /* Frameworks */,
+				163D85BE1D5C6BF700F7F7A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ResolverListerTest-iOS";
+			productName = "ResolverListerTest-iOS";
+			productReference = 163D85C01D5C6BF700F7F7A8 /* ResolverListerTest-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		163BF6E31D51D92500ABB1F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Notakey Latvia";
 				TargetAttributes = {
 					163BF6EB1D51D92500ABB1F6 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					163D85BF1D5C6BF700F7F7A8 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -119,6 +179,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 163BF6E21D51D92500ABB1F6;
 			productRefGroup = 163BF6ED1D51D92500ABB1F6 /* Products */;
@@ -126,6 +187,7 @@
 			projectRoot = "";
 			targets = (
 				163BF6EB1D51D92500ABB1F6 /* ResolverLister */,
+				163D85BF1D5C6BF700F7F7A8 /* ResolverListerTest-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +197,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		163D85BE1D5C6BF700F7F7A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				163D85CF1D5C6BF800F7F7A8 /* LaunchScreen.storyboard in Resources */,
+				163D85CC1D5C6BF800F7F7A8 /* Assets.xcassets in Resources */,
+				163D85CA1D5C6BF800F7F7A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +221,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		163D85BC1D5C6BF700F7F7A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				163D85C71D5C6BF800F7F7A8 /* DetailViewController.swift in Sources */,
+				163D85C51D5C6BF800F7F7A8 /* MasterViewController.swift in Sources */,
+				163D85C31D5C6BF800F7F7A8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		163D85C81D5C6BF800F7F7A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				163D85C91D5C6BF800F7F7A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		163D85CD1D5C6BF800F7F7A8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				163D85CE1D5C6BF800F7F7A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		163BF6F21D51D92500ABB1F6 /* Debug */ = {
@@ -274,6 +375,29 @@
 			};
 			name = Release;
 		};
+		163D85D11D5C6BF800F7F7A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ResolverListerTest-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notakey.ResolverListerTest-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		163D85D21D5C6BF800F7F7A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ResolverListerTest-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notakey.ResolverListerTest-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -291,6 +415,15 @@
 			buildConfigurations = (
 				163BF6F51D51D92500ABB1F6 /* Debug */,
 				163BF6F61D51D92500ABB1F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		163D85D31D5C6BF800F7F7A8 /* Build configuration list for PBXNativeTarget "ResolverListerTest-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				163D85D11D5C6BF800F7F7A8 /* Debug */,
+				163D85D21D5C6BF800F7F7A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

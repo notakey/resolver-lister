@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ResolverListerTest-iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>163BF6EB1D51D92500ABB1F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>163D85BF1D5C6BF700F7F7A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
